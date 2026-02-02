@@ -1,18 +1,28 @@
 # RAG Pipeline — Retrieval-Augmented Generation Module
 
+# RAG Pipeline
+
 ## Overview
+The **RAG Pipeline** (Retrieval-Augmented Generation) combines **document search** with **AI text generation**.  
+It allows applications to **find relevant information** from documents or APIs and **generate accurate, context-aware answers**.  
 
-**RAG Pipeline** is a **state-of-the-art Retrieval-Augmented Generation module** designed to seamlessly integrate **document retrieval** and **large language model (LLM) generation**.  
-It enables applications to **fetch contextually relevant knowledge** from external sources, **embed it into vector stores**, and generate **highly accurate, context-aware responses**.
+The pipeline is fast, accurate, and avoids duplicate results, making it ideal for:
+- Q&A systems  
+- AI assistants  
+- Knowledge search tools  
 
-This project leverages:
-- **Hugging Face Inference API** for LLM generation  
-- **LangChain** for document embeddings and vectorstore management  
-- **Chroma** for persistent vector databases  
-- **Wikipedia REST API** for real-time knowledge retrieval  
-- **Sentence Transformers** for semantic embeddings  
+## Features
+- Retrieve relevant information from documents or APIs  
+- Embed text into vector databases for fast search  
+- Generate AI responses using large language models  
+- Keep knowledge up-to-date with real-time sources like Wikipedia  
 
-The RAG module is optimized for **speed, accuracy, and deduplication**, making it ideal for **question answering systems**, **AI assistants**, and **knowledge retrieval pipelines**.
+## Technologies Used
+- **Hugging Face Inference API** – AI text generation  
+- **LangChain** – Document embeddings and vectorstore management  
+- **Chroma** – Persistent vector database  
+- **Wikipedia REST API** – Real-time information retrieval  
+- **Sentence Transformers** – Semantic text embeddings  
 
 ---
 
