@@ -29,6 +29,7 @@ chroma/
 chromadb/
 *.sqlite
 *.db
+.chroma
 
 # =========================
 # HuggingFace / Transformers
