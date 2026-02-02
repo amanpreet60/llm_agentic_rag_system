@@ -1,0 +1,9 @@
+transformers
+sentence-transformers
+langchain
+langchain-community
+langchain-text-splitters
+chromadb
+huggingface_hub
+requests
+numpy

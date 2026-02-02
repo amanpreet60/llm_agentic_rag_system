@@ -1,0 +1,66 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# =========================
+# Virtual Environments
+# =========================
+.env
+.venv
+venv/
+env/
+ENV/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# =========================
+# ML / Vector DB Artifacts
+# =========================
+chroma/
+chromadb/
+*.sqlite
+*.db
+
+# =========================
+# HuggingFace / Transformers
+# =========================
+.cache/
+huggingface/
+hf_cache/
+~/.cache/huggingface/
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Logs & Temp
+# =========================
+*.log
+*.tmp
+*.bak
+*.swp
+
+# =========================
+# Data / Outputs (optional)
+# =========================
+data/
+outputs/
+results/
+
+# =========================
+# Secrets
+# ======
