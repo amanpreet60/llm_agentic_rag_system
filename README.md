@@ -1,7 +1,5 @@
 # RAG Pipeline — Retrieval-Augmented Generation Module
 
-# RAG Pipeline
-
 ## Overview
 The **RAG Pipeline** (Retrieval-Augmented Generation) combines **document search** with **AI text generation**.  
 It allows applications to **find relevant information** from documents or APIs and **generate accurate, context-aware answers**.  
