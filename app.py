@@ -35,7 +35,7 @@ def get_json(session, url, params):
             time.sleep(session.backoff ** i)
     raise RuntimeError(f"Request failed: {url}")
 
-def filter_near_duplicates(docs, emb, threshold=0.92):
+def filter_near_duplicates(docs, emb, threshold=0.85):
     vecs = np.array(emb.embed_documents([d.page_content for d in docs]))
     keep, used = [], set()
     for i in range(len(docs)):
@@ -46,7 +46,7 @@ def filter_near_duplicates(docs, emb, threshold=0.92):
         used.update(np.where(sims >= threshold)[0])
     return [docs[i] for i in keep]
 
-def wikipedia_fetch(topic: str, max_pages: int = 6) -> List[Document]:
+def wikipedia_fetch(topic: str, max_pages: int = 15) -> List[Document]:
     s = session_with_retries()
     pages = get_json(s, f"{WIKI_REST_API}/search/page", {"q": topic, "limit": max_pages}).get("pages", [])
     titles = [p["title"] for p in pages]
@@ -78,7 +78,10 @@ def build_retriever(topic: str):
     chunks = filter_near_duplicates(chunks, emb)
     vs = Chroma(collection_name="rag_app", embedding_function=emb)
     vs.add_documents(chunks)
-    return vs.as_retriever(search_type="mmr", search_kwargs={"k": 4, "fetch_k": 50, "lambda_mult": 0.7})
+    n_docs = vs._collection.count()
+    fetch_k = min(50, n_docs)
+    k = min(4, n_docs)
+    return vs.as_retriever(search_type="mmr", search_kwargs={"k": k, "fetch_k": fetch_k, "lambda_mult": 0.7})
 
 # ─── UI ───────────────────────────────────────────────────────────────────────
 st.title("Agentic RAG")
